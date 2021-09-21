@@ -8,7 +8,33 @@ output: github_document
 # Problem 1
 
 
-```{r}
+```{r  problem 1-1, message = FALSE}
+library(tidyverse)
+
+set.seed(124)
+
+## data frames
+example_df = 
+  tibble(
+    n_distribution = rnorm(10),
+    logical_vec = n_distribution > 0,
+    char_vec = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
+    factor_vec = factor(c("male", "male", "male", "female", "female", "female", 
+                          "bisex", "bisex", "bisex", "bisex"))
+  )
+example_df
+mean(example_df$n_distribution)
+mean(example_df$logical_vec)
+mean(example_df$char_vec)
+mean(example_df$factor_vec)
 ```
 
-# Problem 2
+```{r  problem 1-2, message = FALSE}
+as.numeric(example_df$n_distribution)
+as.numeric(example_df$logical_vec)
+as.numeric(example_df$char_vec)
+as.numeric(example_df$factor_vec)
+```
+
+
+
