@@ -37,4 +37,22 @@ as.numeric(example_df$factor_vec)
 ```
 
 
+# Problem 2
+```{r  problem 2-1, message = FALSE}
+data("penguins", package = "palmerpenguins")
+penguins
+```
+
+This is a tibble dataset about penguins. The column headers are: 
+
+The dimensions of this tibble: `r nrow(penguins)` * `r ncol(penguins)`
+
+The mean flipper length in mm is: `r mean(penguins$flipper_length_mm, na.rm=TRUE)` mm
+
+
+```{r  problem 2-2, message = FALSE}
+ggplot(penguins, aes(x = flipper_length_mm, y = bill_length_mm, color = species)) + geom_point()
+ggsave("P2_scatterplot.pdf", height = 4, width = 6)
+```
+
 
