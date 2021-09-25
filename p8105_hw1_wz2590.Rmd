@@ -27,7 +27,7 @@ example_df =
 example_df
 ```
 
-```{r problem 1-2, warning = FALSE, message = FALSE}
+```{r problem 1-2, message = FALSE}
 mean(example_df$n_distribution)
 mean(example_df$logical_vec)
 mean(example_df$char_vec)
@@ -49,7 +49,7 @@ In the logical vector, TRUE is converted to 1 and FALSE is converted to 0. This 
   
 While in the character vector, all elements are converted to NA. This is why taking mean of this vector will still return NA.  
   
-The as.numeric function will convert elements in a factor vector to their corresponding level. But it seems that directly call the "mean" function on a factor vector will not apply as.numeric automatically thus still returned NA as mean.  
+The as.numeric function will convert elements in a factor vector to their corresponding levels. But it seems that directly call the "mean" function on a factor vector will not apply as.numeric automatically thus still returned NA as mean.  
 
 ### Problem 2
 ```{r  problem 2-1, message = FALSE}
@@ -57,9 +57,9 @@ data("penguins", package = "palmerpenguins")
 penguins
 ```
 
-This is a tibble dataset about penguins. This dataset contains the following information for each penguin included: `r colnames(penguins)`
+This is a tibble dataset about penguins. Each penguin has the following characteristics: `r colnames(penguins)`  
 
-The dimensions of this tibble: `r nrow(penguins)` * `r ncol(penguins)`
+The dimensions of this tibble: `r nrow(penguins)` * `r ncol(penguins)`. There are 344 penguins included, and each penguin has eight characteristics.
 
 The mean flipper length in mm is: `r mean(penguins$flipper_length_mm, na.rm=TRUE)` mm
 
